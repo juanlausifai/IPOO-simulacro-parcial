@@ -45,7 +45,7 @@ class Categoria{
 
     public function __toString()
     {
-        return "idcategoria".$this->getIdCategoria().
-        "Descripcion: ".$this->getDescripcion();
+        return "idcategoria: ".$this->getIdCategoria()."\n".
+        ", Descripcion: ".$this->getDescripcion()."\n";
     }
 }

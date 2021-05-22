@@ -125,14 +125,28 @@ class Partido{
         $this->equipoDos = $equipoDos;
     }
 
+    public function coeficientePartido(){
+        $coeficienteBase = 0.5;
+        
+        $cantidadGoles=$this->getCantGolesE1()+$this->getCantGolesE2();
+        
+        $cantJugadoresEquipoUno= $this->getEquipoUno()->getCantJugadores();
+        $cantJugadoresEquipoDos= $this->getEquipoDos()->getCantJugadores();
+        $totalCantJugadores = $cantJugadoresEquipoUno+$cantJugadoresEquipoDos;
+
+        $coeficienPartido= $coeficienteBase * $cantidadGoles * $totalCantJugadores;
+
+        return $coeficienPartido;
+    }
+
 
     public function __toString()
     {
-        return "id:".$this->getIdPartido().
-        ", fecha:".$this->getFecha().
-        ", Goles E1:".$this->getCantGolesE1().
-        ", Goles E2:".$this->getCantGolesE2().
-        ", Equipo 1:".$this->getEquipoUno().
-        ", Equipo 2:".$this->getEquipoDos();
+        return "id:".$this->getIdPartido()."\n".
+        "fecha:".$this->getFecha()."\n".
+        "Goles E1:".$this->getCantGolesE1()."\n".
+        "Goles E2:".$this->getCantGolesE2()."\n".
+        "Equipo 1:".$this->getEquipoUno()."\n".
+        "Equipo 2:".$this->getEquipoDos()."\n";
     }
 }

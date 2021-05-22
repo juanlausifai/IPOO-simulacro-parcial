@@ -89,9 +89,9 @@ class Equipo{
 
     public function __toString()
     {
-        return "Nombre: ".$this->getNombre().
-        "Capitan: ".$this->getNombreCapitan().
-        "Cantidad jugadores: ".$this->getCantJugadores().
-        "Categoria: ".$this->getObjCategoria();
+        return $this->getNombre()."\n".
+        "Capitan: ".$this->getNombreCapitan()."\n".
+        "Cantidad jugadores: ".$this->getCantJugadores()."\n".
+        "Categoria: ".$this->getObjCategoria()."\n";
     }
 }
